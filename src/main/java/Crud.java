@@ -1,19 +1,18 @@
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
+import java.nio.file.Paths;
 import java.time.format.DateTimeFormatter;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.SimpleTimeZone;
 
-public class CRUD {
+public class Crud {
     BufferedReader br;
-    private List<Person> list;
+    ArrayList<Person> list;
 
-    public CRUD(){
-        this.list = new ArrayList<>();
-    }
+    FileIO fileIO = new FileIO();
+
+    //list = fileIO.readFile();
 
     void printMenu(){
         System.out.println("----menu----");
@@ -21,12 +20,13 @@ public class CRUD {
         System.out.println("2. 추가 ");
         System.out.println("3. 수정 ");
         System.out.println("4. 삭제 ");
+        System.out.println("5. 파일 저장하기");
         System.out.println("0. 종료 ");
         System.out.println("-----------");
         System.out.println("숫자를 입력하세요 (ex. 1): ");
     }
 
-    public boolean choice (String s){
+    public boolean choice (String s) throws IOException {
         switch (s){
             case "1":
                 readData();
@@ -40,6 +40,8 @@ public class CRUD {
             case "4":
                 deleteData();
                 break;
+            case "5":
+                fileIO.saveFile(list);
             case "0":
                 System.out.println("Bye!");
                 return false;
