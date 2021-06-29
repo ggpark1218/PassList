@@ -7,6 +7,17 @@ public class Person {
     String abroad_visit;
     String regDate;
 
+    public Person(int id, String name, double temp, int hour, int min, String abroad_visit, String regDate) {
+        this.id = id;
+        this.name = name;
+        this.temp = temp;
+        this.hour = hour;
+        this.min = min;
+        this.abroad_visit = abroad_visit;
+        this.regDate = regDate;
+    }
+
+
     public int getId() {
         return id;
     }
