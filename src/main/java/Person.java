@@ -1,11 +1,11 @@
 public class Person {
-    int id;
-    String name;
-    double temp;
-    int hour;
-    int min;
-    String abroad_visit;
-    String regDate;
+    private int id;
+    private String name;
+    private double temp;
+    private int hour;
+    private int min;
+    private String abroad_visit;
+    private String regDate;
 
     public Person(int id, String name, double temp, int hour, int min, String abroad_visit, String regDate) {
         this.id = id;
